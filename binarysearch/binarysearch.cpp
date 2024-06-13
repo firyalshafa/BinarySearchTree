@@ -34,7 +34,7 @@ public:
 
         node* parent = nullptr;
         node* currentNode = nullptr;
-        search(element parent, currentNode); // locate the node wich all be the parent of the tobe insert
+        search(element, parent, currentNode); // locate the node wich all be the parent of the tobe insert
 
         if (parent == nullptr) {
             ROOT = newNode; // mark the new node ass root
@@ -105,6 +105,54 @@ public:
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    binarytree x;
+    while(true) {
+        cout << " \nMenu" << endl;
+        cout << "1. implement insert operation" << endl;
+        cout << "2. perfrom insert operation" << endl;
+        cout << "3.  perfrom preorder operation" << endl;
+        cout << "4.  perfrom postorder operation" << endl;
+        cout << "5.exit" << endl;
+        cout << "\nEnter your choise (1-5) :";
+    }  
+
+    char ch;
+    cin >> ch;
+    cout << endl;
+
+    switch (ch)
+    {
+    case '1':
+    {
+        cout << "enter a word: ";
+        string word;
+        cin >> word;
+        x.insert(word);
+        break;
+    }
+    case '2':
+    {
+        x.inorder(x.ROOT);
+        break;
+    }
+    case '3':
+    {
+        x.preorder(x.ROOT);
+        break;
+    }
+    case '4':
+    {
+        x.postorder(x.ROOT);
+        break;
+    }
+    case'5':
+        return 0;
+    default:
+    {
+        cout << "invalid option " << endl;
+        break;
+    }
+    
+    }
 }
 
